@@ -1,5 +1,9 @@
-export class User {
+import {Contact} from './contact.type';
 
-  contacts: any[];
+export interface UserData extends Contact {
+  contacts: Contact[];
+}
 
+export interface User extends UserData {
+  $exists():boolean;
 }

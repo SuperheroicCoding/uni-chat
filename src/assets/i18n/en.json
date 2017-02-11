@@ -1,0 +1,15 @@
+{
+  "title" : "Uniflow Chat",
+  "contacts": {
+    "tabName" :"Contacts",
+    "title": "Your Contacts"
+  },
+  "chats": {
+    "tabName" :"Chats",
+    "title": "Chats"
+  },
+  "settings": {
+    "tabName" :"Settings",
+    "title": "Settings"
+  }
+}
