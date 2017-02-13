@@ -20,7 +20,7 @@ export class ContactsService {
 
   public getContacts$(): Observable<any[]> {
     return this.userService.getUser$().switchMap((user) =>
-      this.fire.database.list(`/${user.uid}/contacts`)
+      this.fire.database.list(`/contacts/${user.uid}/`)
     )
   }
 }

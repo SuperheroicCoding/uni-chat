@@ -1,5 +1,21 @@
 {
   "title": "Uniflow Chat",
+  "login": {
+    "title": "Anmelden",
+    "email": "Email",
+    "emailPlaceholder": "Deine Email Adresse",
+    "password": "Passwort",
+    "passwordPlaceholder": "Dein Passwort",
+    "error": {
+      "invalidEmail": "Bitte gib eine gültige Email Adresse ein.",
+      "invalidPassword": "Dein Passwort muss mindestens 7 Zeichen haben"
+    },
+    "action": {
+      "login": "Anmelden",
+      "forgotPassword": "Ich habe mein Passwort vergessen 🙁",
+      "createAccount": "Jetzt registrieren"
+    }
+  },
   "contacts": {
     "tabName": "Kontakte",
     "title": "Deine Kontakte"

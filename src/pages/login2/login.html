@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{'login.title' | translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
+
+    <ion-item>
+      <ion-label stacked>{{'login.email' | translate}}</ion-label>
+      <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
+                 placeholder="{{'login.emailPlaceholder' | translate}}"
+                 [class.invalid]="!loginForm.controls.email.valid &&
+          (emailChanged || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
+      (emailChanged || submitAttempt)">
+      <p>{{'login.error.invalidEmail' | translate}}</p>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>{{'login.password' | translate}}</ion-label>
+      <ion-input #password formControlName="password" type="password"
+                 (change)="elementChanged(password)"
+                 placeholder="Your password"
+                 [class.invalid]="!loginForm.controls.password.valid &&
+          (passwordChanged || submitAttempt)"></ion-input>
+    </ion-item>
+    <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
+      (passwordChanged || submitAttempt)">
+      <p>{{'login.error.invalidPassword' | translate}}</p>
+    </ion-item>
+
+    <button ion-button block type="submit">
+      {{'login.action.login' | translate}}
+    </button>
+
+  </form>
+
+  <button ion-button block clear (click)="goToResetPassword()">
+    {{'login.action.forgotPassword' | translate}}
+  </button>
+
+  <button ion-button block clear (click)="createAccount()">
+    {{'login.action.createAccount' | translate}}
+  </button>
+
+</ion-content>

@@ -1,5 +1,21 @@
 {
   "title" : "Uniflow Chat",
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "emailPlaceholder": "Your email address",
+    "password": "Password",
+    "passwordPlaceholder": "Your password",
+    "error": {
+      "invalidEmail": "Please enter a valid email.",
+      "invalidPassword": "Your password needs more than 6 characters."
+    },
+    "action": {
+      "login": "Login",
+      "forgotPassword": " I forgot my password 🙁",
+      "createAccount": "Create a new account"
+    }
+  },
   "contacts": {
     "tabName" :"Contacts",
     "title": "Your Contacts"
