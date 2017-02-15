@@ -4,10 +4,10 @@ import {
   AlertController } from 'ionic-angular';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { AuthData } from '../../providers/auth-data';
 import { EmailValidator } from '../../validators/email.validator';
-import { TabsPage } from '../tabs/tabs';
 import {AuthService} from '../../providers/auth-service';
+
+import { TabsPage } from '../tabs/tabs';
 
 @Component({
   selector: 'page-signup',

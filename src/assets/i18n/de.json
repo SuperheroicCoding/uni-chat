@@ -18,7 +18,8 @@
   },
   "contacts": {
     "tabName": "Kontakte",
-    "title": "Deine Kontakte"
+    "title": "Deine Kontakte",
+    "yourselfLocalName": "Ich"
   },
   "chats": {
     "tabName": "Chats",

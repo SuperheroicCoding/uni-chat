@@ -1,5 +1,5 @@
 {
-  "title" : "Uniflow Chat",
+  "title": "Uniflow Chat",
   "login": {
     "title": "Login",
     "email": "Email",
@@ -17,15 +17,16 @@
     }
   },
   "contacts": {
-    "tabName" :"Contacts",
-    "title": "Your Contacts"
+    "tabName": "Contacts",
+    "title": "Your Contacts",
+    "yourselfLocalName": "Me"
   },
   "chats": {
-    "tabName" :"Chats",
+    "tabName": "Chats",
     "title": "Chats"
   },
   "settings": {
-    "tabName" :"Settings",
+    "tabName": "Settings",
     "title": "Settings"
   }
 }

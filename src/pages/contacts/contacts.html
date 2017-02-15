@@ -8,12 +8,12 @@
 </ion-header>
 <ion-content padding>
   <ion-card *ngFor="let contact of contacts$ | async">
-    <ion-item >
+    <ion-item>
       <ion-avatar item-left>
-        <img [src]="contact.photoUrl">
+        <img [src]="contact.photoURL">
       </ion-avatar>
-      <h2>{{contact.displayName}}</h2>
-      <p>{{contact.email}}</p>
+      <h2>{{contact.localDisplayName || contact.displayName}}</h2>
+      <p>{{contact.status}}</p>
     </ion-item>
   </ion-card>
 </ion-content>
