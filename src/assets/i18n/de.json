@@ -1,9 +1,13 @@
 {
   "title": "Uniflow Chat",
-  "login": {
-    "title": "Anmelden",
+  "auth": {
+    "title": {
+      "login": "Anmelden",
+      "resetPassword": "Passwort zurücksetzen",
+      "signup": "Jetzt registrieren"
+    },
     "email": "Email",
-    "emailPlaceholder": "Deine Email Adresse",
+    "emailPlaceholder": "Deine Emailadresse",
     "password": "Passwort",
     "passwordPlaceholder": "Dein Passwort",
     "error": {
@@ -12,7 +16,8 @@
     },
     "action": {
       "login": "Anmelden",
-      "forgotPassword": "Ich habe mein Passwort vergessen 🙁",
+      "resetPasswordLink": "Ich habe mein Passwort vergessen 🙁",
+      "resetPassword": "Passwort zurück setzen",
       "createAccount": "Jetzt registrieren"
     }
   },
@@ -27,6 +32,10 @@
   },
   "settings": {
     "tabName": "Einstellungen",
-    "title": "Einstellungen"
+    "title": "Einstellungen",
+    "options" : "Optionen",
+    "action" : {
+      "logout" : "Jetzt ausloggen."
+    }
   }
 }

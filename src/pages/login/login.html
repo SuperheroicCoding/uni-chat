@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      {{'login.title' | translate}}
+      {{'auth.title.login' | translate}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,19 +10,19 @@
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
 
     <ion-item>
-      <ion-label stacked>{{'login.email' | translate}}</ion-label>
+      <ion-label stacked>{{'auth.email' | translate}}</ion-label>
       <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
-                 placeholder="{{'login.emailPlaceholder' | translate}}"
+                 placeholder="{{'auth.emailPlaceholder' | translate}}"
                  [class.invalid]="!loginForm.controls.email.valid &&
           (emailChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.email.valid  &&
       (emailChanged || submitAttempt)">
-      <p>{{'login.error.invalidEmail' | translate}}</p>
+      <p>{{'auth.error.invalidEmail' | translate}}</p>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>{{'login.password' | translate}}</ion-label>
+      <ion-label stacked>{{'auth.password' | translate}}</ion-label>
       <ion-input #password formControlName="password" type="password"
                  (change)="elementChanged(password)"
                  placeholder="Your password"
@@ -31,21 +31,21 @@
     </ion-item>
     <ion-item class="error-message" *ngIf="!loginForm.controls.password.valid  &&
       (passwordChanged || submitAttempt)">
-      <p>{{'login.error.invalidPassword' | translate}}</p>
+      <p>{{'auth.error.invalidPassword' | translate}}</p>
     </ion-item>
 
     <button ion-button block type="submit">
-      {{'login.action.login' | translate}}
+      {{'auth.action.login' | translate}}
     </button>
 
   </form>
 
   <button ion-button block clear (click)="goToResetPassword()">
-    {{'login.action.forgotPassword' | translate}}
+    {{'auth.action.resetPasswordLink' | translate}}
   </button>
 
   <button ion-button block clear (click)="createAccount()">
-    {{'login.action.createAccount' | translate}}
+    {{'auth.action.createAccount' | translate}}
   </button>
 
 </ion-content>

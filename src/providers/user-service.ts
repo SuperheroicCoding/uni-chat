@@ -30,7 +30,7 @@ export class UserService {
 
   getUser$(): Observable<User> {
     return this.authService.authUser$
-      .switchMap((authUser) => this.loadUserRef(authUser.uid))
+      .switchMap((authUser) => authUser? this.loadUserRef(authUser.uid) : Observable.empty())
       .switchMap((userObject: User) => userObject.$exists() ? Observable.of(userObject) : Observable.from(this.createUser()))
   }
 

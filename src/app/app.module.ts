@@ -7,7 +7,7 @@ import {MyApp} from './app.component';
 import {ChatsPage} from '../pages/chats/chats';
 import {SettingsPage} from '../pages/settings/settings';
 import {ContactsPage} from '../pages/contacts/contacts';
-import {LoginPage} from '../pages/login2/login';
+import {LoginPage} from '../pages/login/login';
 import {SignupPage} from '../pages/signup/signup';
 import {ResetPasswordPage} from '../pages/reset-password/reset-password';
 import {TabsPage} from '../pages/tabs/tabs';

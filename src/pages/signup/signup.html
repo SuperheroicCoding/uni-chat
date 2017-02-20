@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Create an Account
+      {{'auth.title.signup' | translate}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,27 +10,27 @@
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
 
     <ion-item>
-      <ion-label stacked>Email</ion-label>
+      <ion-label stacked>{{'auth.email' | translate}}</ion-label>
       <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"
-                 placeholder="Your email address"
+                 placeholder="{{'auth.emailPlaceholder' | translate}}"
                  [class.invalid]="!signupForm.controls.email.valid && (emailChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.email.valid  && (emailChanged || submitAttempt)">
-      <p>Please enter a valid email.</p>
+      <p>{{'auth.error.invalidEmail' | translate}}</p>
     </ion-item>
 
     <ion-item>
-      <ion-label stacked>Password</ion-label>
+      <ion-label stacked>{{'auth.password' | translate}}</ion-label>
       <ion-input #password formControlName="password" type="password" (change)="elementChanged(password)"
-                 placeholder="Your password"
+                 placeholder="{{'auth.paddwordPlaceholder' | translate}}"
                  [class.invalid]="!signupForm.controls.password.valid && (passwordChanged || submitAttempt)"></ion-input>
     </ion-item>
     <ion-item class="error-message" *ngIf="!signupForm.controls.password.valid  && (passwordChanged || submitAttempt)">
-      <p>Your password needs more than 6 characters.</p>
+      <p>{{'auth.error.invalidPassword' | translate}}</p>
     </ion-item>
 
     <button ion-button block type="submit">
-      Create an Account
+      {{'auth.action.createAccount' | translate}}
     </button>
 
   </form>

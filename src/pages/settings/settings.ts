@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
+import {AuthService} from '../../providers/auth-service';
 
 @Component({
   selector: 'page-settings',
@@ -8,8 +9,12 @@ import { NavController } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private auth: AuthService) {
 
+  }
+
+  logout() {
+    this.auth.logoutUser();
   }
 
 }

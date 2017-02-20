@@ -1,2 +1,2 @@
-<ion-title>{{title | translate}}</ion-title>
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-title>{{'title' | translate}}</ion-title>
+<ion-nav [root]="rootPage$ | async"></ion-nav>

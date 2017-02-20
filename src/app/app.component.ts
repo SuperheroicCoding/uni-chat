@@ -1,29 +1,25 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
 import {TranslateService} from 'ng2-translate';
 import {TabsPage} from '../pages/tabs/tabs';
-import {LoginPage} from '../pages/login2/login';
+import {LoginPage} from '../pages/login/login';
 import {AuthService} from '../providers/auth-service';
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/distinctUntilChanged'
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: Component;
+  rootPage$: Component;
 
   constructor(platform: Platform, translate: TranslateService, authService: AuthService) {
 
-    const authObserver = authService.auth$.subscribe(user => {
-      if (user) {
-        this.rootPage = TabsPage;
-        authObserver.unsubscribe();
-      } else {
-        this.rootPage = LoginPage;
-        authObserver.unsubscribe();
-      }
-    });
+    this.rootPage$ = authService.auth$
+      .map(user => user ? TabsPage : LoginPage)
+      .distinctUntilChanged();
 
     platform.ready().then(() => {
 

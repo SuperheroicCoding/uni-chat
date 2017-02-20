@@ -1,15 +1,11 @@
 import {Injectable} from '@angular/core';
-import 'rxjs/add/operator/map';
 import {AngularFire, FirebaseAuthState} from 'angularfire2';
 import firebase from 'firebase';
 import {Observable} from 'rxjs';
+import 'rxjs/add/observable/empty';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/switchMap';
 
-/*
- Generated class for the AuthService provider.
-
- See https://angular.io/docs/ts/latest/guide/dependency-injection.html
- for more info on providers and Angular 2 DI.
- */
 @Injectable()
 export class AuthService {
 
@@ -17,12 +13,14 @@ export class AuthService {
   authUser$: Observable<firebase.User>;
 
   constructor(private angularFire: AngularFire) {
-    this.auth$ = angularFire.auth.asObservable();
-    this.authUser$ = this.auth$.map((authState) => authState.auth);
+    this.auth$ = angularFire.auth
+      .asObservable();
+    this.authUser$ = this.auth$
+      .switchMap((authState) => authState ? Observable.of(authState.auth) : Observable.empty());
   }
 
-  loginUser(email: string, password: string): firebase.Promise<FirebaseAuthState>  {
-    // push the authState to the auth$;
+  loginUser(email: string, password: string): firebase.Promise<FirebaseAuthState> {
+    // pushes indiredctly the authState to the auth$;
     return this.angularFire.auth.login({email, password});
   }
 
@@ -35,7 +33,7 @@ export class AuthService {
   }
 
   signupUser(newEmail: string, newPassword: string): firebase.Promise<FirebaseAuthState> {
-    return this.angularFire.auth.createUser({ email: newEmail, password: newPassword });
+    return this.angularFire.auth.createUser({email: newEmail, password: newPassword});
   }
 
 }

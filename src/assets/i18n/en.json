@@ -1,7 +1,11 @@
 {
   "title": "Uniflow Chat",
-  "login": {
-    "title": "Login",
+  "auth": {
+    "title": {
+      "login": "Login",
+      "resetPassword": "Reset password",
+      "signup": "Create Account"
+    },
     "email": "Email",
     "emailPlaceholder": "Your email address",
     "password": "Password",
@@ -12,8 +16,9 @@
     },
     "action": {
       "login": "Login",
-      "forgotPassword": " I forgot my password 🙁",
-      "createAccount": "Create a new account"
+      "resetPasswordLink": " I forgot my password 🙁",
+      "createAccount": "Create a new account",
+      "resetPassword": "Reset password"
     }
   },
   "contacts": {
