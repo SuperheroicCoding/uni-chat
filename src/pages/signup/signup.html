@@ -1,11 +1,6 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-      {{'auth.title.signup' | translate}}
-    </ion-title>
-  </ion-navbar>
+  <uni-chat-header title="{{'auth.title.signup' | translate}}"></uni-chat-header>
 </ion-header>
-
 <ion-content padding>
   <form [formGroup]="signupForm" (submit)="signupUser()" novalidate>
 
@@ -34,5 +29,4 @@
     </button>
 
   </form>
-
 </ion-content>

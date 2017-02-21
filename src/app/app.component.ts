@@ -1,12 +1,12 @@
-import {Component, OnDestroy} from '@angular/core';
+import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
 import {TranslateService} from 'ng2-translate';
 import {TabsPage} from '../pages/tabs/tabs';
 import {LoginPage} from '../pages/login/login';
 import {AuthService} from '../providers/auth-service';
-import 'rxjs/add/operator/map'
-import 'rxjs/add/operator/distinctUntilChanged'
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 
 @Component({

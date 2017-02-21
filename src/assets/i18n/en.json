@@ -1,5 +1,7 @@
 {
   "title": "Uniflow Chat",
+  "header": {
+  },
   "auth": {
     "title": {
       "login": "Login",
@@ -32,6 +34,16 @@
   },
   "settings": {
     "tabName": "Settings",
-    "title": "Settings"
+    "title": "Settings",
+    "options": "Options",
+    "language": {
+      "selectTitle": "Language:",
+      "de": "German",
+      "en": "English",
+      "cancel" : "Cancel"
+    },
+    "action": {
+      "logout": "Sign out."
+    }
   }
 }

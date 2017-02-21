@@ -1,14 +1,9 @@
 <ion-header>
-  <ion-navbar color="primary">
-    <ion-title>
-      {{'auth.title.login' | translate}}
-    </ion-title>
-  </ion-navbar>
+  <uni-chat-header title="{{'auth.title.login' | translate}}">
+  </uni-chat-header>
 </ion-header>
-
 <ion-content padding>
   <form [formGroup]="loginForm" (submit)="loginUser()" novalidate>
-
     <ion-item>
       <ion-label stacked>{{'auth.email' | translate}}</ion-label>
       <ion-input #email formControlName="email" type="email" (change)="elementChanged(email)"

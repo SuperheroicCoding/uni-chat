@@ -9,6 +9,7 @@ import { NavController } from 'ionic-angular';
 export class ChatsPage {
 
   constructor(public navCtrl: NavController) {
+    // we need to push the concret chat to the nav
 
   }
 

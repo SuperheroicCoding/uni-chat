@@ -4,6 +4,7 @@ import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from 'ng2-translate';
 import {MyApp} from './app.component';
+
 import {ChatsPage} from '../pages/chats/chats';
 import {SettingsPage} from '../pages/settings/settings';
 import {ContactsPage} from '../pages/contacts/contacts';
@@ -11,9 +12,12 @@ import {LoginPage} from '../pages/login/login';
 import {SignupPage} from '../pages/signup/signup';
 import {ResetPasswordPage} from '../pages/reset-password/reset-password';
 import {TabsPage} from '../pages/tabs/tabs';
+
 import {ContactsService} from '../providers/contacts-service';
 import {UserService} from '../providers/user-service';
 import {AuthService} from '../providers/auth-service';
+
+import {UniChatHeaderComponent} from '../components/uni-chat-header/uni-chat-header';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCBDFvc0B6E8udknmgLCqOyuAhHijGXANM",
@@ -45,7 +49,8 @@ const myFirebaseAuthConfig = {
     ChatsPage,
     SettingsPage,
     ContactsPage,
-    TabsPage
+    TabsPage,
+    UniChatHeaderComponent
   ],
 
   bootstrap: [IonicApp],
