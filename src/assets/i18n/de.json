@@ -1,7 +1,5 @@
 {
-  "title": "Uniflow Chat",
-  "header": {
-  },
+  "title": "uniflow",
   "auth": {
     "title": {
       "login": "Anmelden",
@@ -32,18 +30,18 @@
     "tabName": "Chats",
     "title": "Chats"
   },
+  "languageSelect": {
+    "selectTitle": "Sprache:",
+    "de": "Deutsch",
+    "en": "Englisch",
+    "cancel" : "Abrechen"
+  },
   "settings": {
     "tabName": "Einstellungen",
     "title": "Einstellungen",
-    "options": "Optionen",
-    "language": {
-      "selectTitle": "Sprache:",
-      "de": "Deutsch",
-      "en": "Englisch",
-      "cancel" : "Abrechen"
-    },
+    "settings": "Einstellungen",
     "action": {
-      "logout": "Jetzt ausloggen."
+      "logout": "Jetzt ausloggen"
     }
   }
 }

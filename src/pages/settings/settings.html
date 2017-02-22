@@ -3,27 +3,15 @@
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-list-header>{{'settings.options' | translate}}</ion-list-header>
+    <ion-list-header>{{'settings.settings' | translate}}</ion-list-header>
     <ion-item>
-      <button ion-button item-right icon-left (click)="logout()">
+      <button ion-button icon-left (click)="logout()">
         <ion-icon name="log-out"></ion-icon>
         {{'settings.action.logout' | translate}}
       </button>
     </ion-item>
     <ion-item>
-      <ion-label>{{'settings.language.selectTitle' | translate}}</ion-label>
-      <ion-select
-        [(ngModel)]="selectedLanguage"
-        (ionChange)="changeLanguage()"
-        [cancelText]="'settings.language.cancel' | translate"
-        [selectedText]="('settings.language.' + selectedLanguage) | translate">
-        <ion-option
-          *ngFor="let langOption of languageOptions"
-          value="{{langOption.value}}"
-          selected="{{langOption.value == selectedLanguage}}">
-          {{('settings.language.' + langOption.value) | translate}}
-        </ion-option>
-      </ion-select>
+      <uni-language-select item-content></uni-language-select>
     </ion-item>
   </ion-list>
 </ion-content>

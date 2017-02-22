@@ -1,4 +1,4 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {TranslateService} from 'ng2-translate';
 
 @Component({
@@ -11,6 +11,5 @@ export class UniChatHeaderComponent {
 
   constructor(private translate: TranslateService) {
   }
-
 
 }

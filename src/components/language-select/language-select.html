@@ -1,0 +1,15 @@
+<ion-row>
+  <ion-label>{{'languageSelect.selectTitle' | translate}}</ion-label>
+  <ion-select
+    [(ngModel)]="selectedLanguage"
+    (ionChange)="changeLanguage()"
+    [cancelText]="'languageSelect.cancel' | translate"
+    [selectedText]="('languageSelect.' + selectedLanguage) | translate">
+    <ion-option
+      *ngFor="let langOption of languageOptions"
+      value="{{langOption.value}}"
+      selected="{{langOption.value == selectedLanguage}}">
+      {{('languageSelect.' + langOption.value) | translate}}
+    </ion-option>
+  </ion-select>
+</ion-row>

@@ -18,6 +18,7 @@ import {UserService} from '../providers/user-service';
 import {AuthService} from '../providers/auth-service';
 
 import {UniChatHeaderComponent} from '../components/uni-chat-header/uni-chat-header';
+import {LanguageSelectComponent} from '../components/language-select/language-select';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCBDFvc0B6E8udknmgLCqOyuAhHijGXANM",
@@ -50,7 +51,8 @@ const myFirebaseAuthConfig = {
     SettingsPage,
     ContactsPage,
     TabsPage,
-    UniChatHeaderComponent
+    UniChatHeaderComponent,
+    LanguageSelectComponent
   ],
 
   bootstrap: [IonicApp],
@@ -62,7 +64,9 @@ const myFirebaseAuthConfig = {
     ChatsPage,
     SettingsPage,
     ContactsPage,
-    TabsPage
+    TabsPage,
+    UniChatHeaderComponent,
+    LanguageSelectComponent
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},

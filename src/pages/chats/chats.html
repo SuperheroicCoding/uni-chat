@@ -2,7 +2,16 @@
   <uni-chat-header title="{{'chats.title' | translate}}"></uni-chat-header>
 </ion-header>
 <ion-content padding>
-  <!--  <ion-fab>
-      <button ion-fab color="primary">Button</button>
-    </ion-fab>-->
+
+
+  <ion-fab top right>
+    <button ion-fab color="primary">
+      <ion-icon name="add"></ion-icon>
+    </button>
+    <ion-fab-list side="left">
+      <button ion-fab>
+        <ion-icon name="talk"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
