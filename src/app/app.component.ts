@@ -2,27 +2,24 @@ import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {StatusBar, Splashscreen} from 'ionic-native';
 import {TranslateService} from 'ng2-translate';
-import {TabsPage} from '../pages/tabs/tabs';
-import {LoginPage} from '../pages/login/login';
-import {AuthService} from '../providers/auth-service';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/distinctUntilChanged';
+import {select} from '@angular-redux/store';
+import {InitActions} from '../providers/init-actions';
+import {Observable} from 'rxjs';
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage$: Component;
+  @select() rootPage$: Observable<Component>;
 
-  constructor(platform: Platform, translate: TranslateService, authService: AuthService) {
+  constructor(platform: Platform, translate: TranslateService, initActions: InitActions) {
 
-    this.rootPage$ = authService.auth$
-      .map(user => user ? TabsPage : LoginPage)
-      .distinctUntilChanged();
+    initActions.dispatchDetermineRootPage();
 
     platform.ready().then(() => {
-
 
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -38,6 +35,5 @@ export class MyApp {
 
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     translate.use(userLang);
-
   }
 }

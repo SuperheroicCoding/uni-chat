@@ -13,8 +13,7 @@ export class AuthService {
   authUser$: Observable<firebase.User>;
 
   constructor(private angularFire: AngularFire) {
-    this.auth$ = angularFire.auth
-      .asObservable();
+    this.auth$ = angularFire.auth;
     this.authUser$ = this.auth$
       .switchMap((authState) => authState ? Observable.of(authState.auth) : Observable.empty());
   }
