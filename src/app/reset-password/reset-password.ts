@@ -1,8 +1,8 @@
 import {NavController, AlertController} from 'ionic-angular';
 import {Component} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {EmailValidator} from '../../validators/email.validator';
-import {AuthService} from '../../providers/auth-service';
+import {EmailValidator} from '../shared/email.validator';
+import {AuthService} from '../shared/auth.service';
 
 @Component({
   selector: 'page-reset-password',

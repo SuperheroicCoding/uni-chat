@@ -2,23 +2,28 @@ import {NgModule, ErrorHandler} from '@angular/core';
 import {Http} from '@angular/http';
 import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
-import {TranslateModule, TranslateStaticLoader, TranslateLoader} from 'ng2-translate';
+import {TranslateModule, TranslateStaticLoader, TranslateLoader, TranslateService} from 'ng2-translate';
 import {NgRedux, NgReduxModule, DevToolsExtension} from '@angular-redux/store';
 import {MyApp} from './app.component';
-import {ChatsPage} from '../pages/chats/chats';
-import {SettingsPage} from '../pages/settings/settings';
-import {ContactsPage} from '../pages/contacts/contacts';
-import {LoginPage} from '../pages/login/login';
-import {SignupPage} from '../pages/signup/signup';
-import {ResetPasswordPage} from '../pages/reset-password/reset-password';
-import {TabsPage} from '../pages/tabs/tabs';
-import {ContactsService} from '../providers/contacts-service';
-import {UserService} from '../providers/user-service';
-import {AuthService} from '../providers/auth-service';
-import {UniChatHeaderComponent} from '../components/uni-chat-header/uni-chat-header';
-import {LanguageSelectComponent} from '../components/language-select/language-select';
-import {UniState, rootReducer, INITIAL_STORE} from './store';
-import {InitActions} from '../providers/init-actions';
+import {ChatsPage} from './chats/chats';
+import {SettingsPage} from './settings/settings';
+import {ContactsPage} from './contacts/contacts';
+import {LoginPage} from './login/login';
+import {SignupPage} from './signup/signup';
+import {ResetPasswordPage} from './reset-password/reset-password';
+import {TabsPage} from './tabs/tabs';
+import {ContactsService} from './shared/contacts.service';
+import {UserService} from './shared/user.service';
+import {AuthService} from './shared/auth.service';
+import {UniChatHeaderComponent} from './shared/uni-chat-header/uni-chat-header';
+import {LanguageSelectComponent} from './settings/language-select/language-select';
+import {UniState, rootReducer} from './store';
+import {createEpicMiddleware} from 'redux-observable';
+import {InitActions} from './init-actions.service';
+import {RootEpicCombiner} from './rootEpic.service';
+import {InitEpics} from './init-epics.service';
+import {LanguageEpics} from './shared/language-epics.service';
+import {LanguageActions} from './shared/language-actions.service';
 
 
 export const firebaseConfig = {
@@ -76,18 +81,26 @@ const myFirebaseAuthConfig = {
     UserService,
     ContactsService,
     DevToolsExtension,
-    InitActions
+    InitActions,
+    InitEpics,
+    LanguageActions,
+    LanguageEpics,
+    RootEpicCombiner
   ]
 })
 
 export class AppModule {
-  constructor(ngRedux: NgRedux<UniState>, devTools: DevToolsExtension) {
+  constructor(ngRedux: NgRedux<UniState>, devTools: DevToolsExtension, rootEpics: RootEpicCombiner, translate: TranslateService) {
+
+    translate.setDefaultLang('en');
+
+    const middleware = [createEpicMiddleware(rootEpics.rootEpic())];
 
     const storeEnhancers = devTools.isEnabled() ?
       [devTools.enhancer()] :
       [];
 
-    ngRedux.configureStore(rootReducer, INITIAL_STORE, [],
+    ngRedux.configureStore(rootReducer, {initState: {rootPage: null}, languageState: {}}, middleware,
       storeEnhancers);
   }
 }

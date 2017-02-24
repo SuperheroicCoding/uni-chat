@@ -1,7 +1,7 @@
 import {Component, AfterViewInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import 'rxjs/add/operator/do';
-import {ContactsService} from '../../providers/contacts-service';
+import {ContactsService} from '../shared/contacts.service';
 import {Observable} from 'rxjs';
 
 @Component({

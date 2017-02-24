@@ -6,6 +6,7 @@ export interface UserData extends Uid {
   displayName?: string,
   photoURL?: string,
   status?: string
+  userLanguage?: string;
 }
 
 export interface User extends Exists, UserData {
@@ -17,7 +18,8 @@ export function copyUser(userToCopy: UserData): UserData {
     displayName: userToCopy.displayName ? userToCopy.displayName : userToCopy.email,
     email: userToCopy.email,
     photoURL: userToCopy.photoURL ? userToCopy.photoURL : 'assets/img/default-avatar.png',
-    status: 'Hi UniChat'
+    status: 'Hi UniChat',
+    userLanguage: userToCopy.userLanguage
   }
 }
 

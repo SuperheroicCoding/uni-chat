@@ -2,13 +2,13 @@
   <ion-label>{{'languageSelect.selectTitle' | translate}}</ion-label>
   <ion-select
     [(ngModel)]="selectedLanguage"
-    (ionChange)="changeLanguage()"
+    (ionChange)="changeLanguage(selectedLanguage)"
     [cancelText]="'languageSelect.cancel' | translate"
     [selectedText]="('languageSelect.' + selectedLanguage) | translate">
     <ion-option
-      *ngFor="let langOption of languageOptions"
+      *ngFor="let langOption of languageOptions$ | async"
       value="{{langOption.value}}"
-      selected="{{langOption.value == selectedLanguage}}">
+      selected="{{langOption.selected}}">
       {{('languageSelect.' + langOption.value) | translate}}
     </ion-option>
   </ion-select>

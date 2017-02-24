@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/share';
 import {User, UserData, copyUser} from './user.type';
-import {AuthService} from './auth-service';
+import {AuthService} from './auth.service';
 import {Contact} from './contact.type';
 
 

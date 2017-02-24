@@ -4,7 +4,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 import {AngularFire, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
-import {UserService} from './user-service';
+import {UserService} from './user.service';
 import {Contact, ContactUserData, ContactUser, mergeUserAndContact} from './contact.type';
 import {TranslateService} from 'ng2-translate';
 import {User} from './user.type';
